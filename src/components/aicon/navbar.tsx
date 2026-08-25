@@ -45,74 +45,113 @@ export function Navbar() {
   }, [open]);
 
   return (
-    <header
-      className={cn(
-        "fixed inset-x-0 top-0 z-50 transition-[background-color,border-color,backdrop-filter] duration-500",
-        scrolled
-          ? "border-b border-[color-mix(in_oklab,var(--bone)_15%,transparent)] bg-[color-mix(in_oklab,var(--ink)_88%,transparent)] backdrop-blur-md"
-          : "border-b border-transparent",
-      )}
-    >
-      <nav
-        aria-label="Primary"
-        className="mx-auto flex h-16 max-w-[1400px] items-center justify-between px-5 sm:px-8 lg:h-20"
+    <>
+      <header
+        className={cn(
+          "fixed inset-x-0 top-0 z-40 transition-[background-color,border-color,backdrop-filter] duration-500",
+          scrolled
+            ? "border-b border-[color-mix(in_oklab,var(--bone)_15%,transparent)] bg-[color-mix(in_oklab,var(--ink)_88%,transparent)] backdrop-blur-md"
+            : "border-b border-transparent",
+        )}
       >
-        <a href="#top" className="text-[var(--bone)]" aria-label="AICON'26 home">
-          <Wordmark tone="bone" />
-        </a>
-
-        <ul className="hidden items-center gap-9 md:flex">
-          {NAV_LINKS.map((link) => (
-            <li key={link.href}>
-              <a
-                href={link.href}
-                className={cn(
-                  "link-signal label-mono text-[var(--bone)]/85 transition-colors hover:text-[var(--bone)]",
-                  link.label === "Register" &&
-                    "after:scale-x-100 after:origin-left px-3 py-2 text-[var(--ink)] bg-[var(--signal)] hover:text-[var(--ink)] after:hidden hover:-translate-y-0.5 transition-transform",
-                )}
-              >
-                {link.label}
-              </a>
-            </li>
-          ))}
-        </ul>
-
-        <button
-          type="button"
-          onClick={() => setOpen((v) => !v)}
-          aria-expanded={open}
-          aria-controls="mobile-menu"
-          aria-label={open ? "Close menu" : "Open menu"}
-          className="focus-visible:ring-ring inline-flex h-11 w-11 items-center justify-center border border-[color-mix(in_oklab,var(--bone)_25%,transparent)] text-[var(--bone)] focus-visible:ring-2 focus-visible:outline-none md:hidden cursor-pointer"
+        <nav
+          aria-label="Primary"
+          className="mx-auto flex h-16 max-w-[1400px] items-center justify-between px-5 sm:px-8 lg:h-20"
         >
-          {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-        </button>
-      </nav>
+          <a href="#top" className="text-[var(--bone)]" aria-label="AICON'26 home">
+            <Wordmark tone="bone" />
+          </a>
 
-      <div
-        id="mobile-menu"
-        hidden={!open}
-        className="bg-[var(--ink)] px-5 pb-10 text-[var(--bone)] md:hidden border-b border-[color-mix(in_oklab,var(--bone)_15%,transparent)] shadow-2xl"
-      >
-        <ul className="flex flex-col">
-          {NAV_LINKS.map((link, i) => (
-            <li
-              key={link.href}
-              className="border-t border-[color-mix(in_oklab,var(--bone)_12%,transparent)]"
+          <ul className="hidden items-center gap-9 md:flex">
+            {NAV_LINKS.map((link) => (
+              <li key={link.href}>
+                <a
+                  href={link.href}
+                  className={cn(
+                    "link-signal label-mono text-[var(--bone)]/85 transition-colors hover:text-[var(--bone)]",
+                    link.label === "Register" &&
+                      "after:scale-x-100 after:origin-left px-3 py-2 text-[var(--ink)] bg-[var(--signal)] hover:text-[var(--ink)] after:hidden hover:-translate-y-0.5 transition-transform",
+                  )}
+                >
+                  {link.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+
+          <button
+            type="button"
+            onClick={() => setOpen(true)}
+            aria-expanded={open}
+            aria-controls="mobile-menu"
+            aria-label="Open menu"
+            className="focus-visible:ring-ring inline-flex h-11 w-11 items-center justify-center border border-[color-mix(in_oklab,var(--bone)_25%,transparent)] text-[var(--bone)] focus-visible:ring-2 focus-visible:outline-none md:hidden cursor-pointer"
+          >
+            <Menu className="h-5 w-5" />
+          </button>
+        </nav>
+      </header>
+
+      {/* Full-screen Mobile Overlay */}
+      {open && (
+        <div
+          id="mobile-menu"
+          role="dialog"
+          aria-modal="true"
+          aria-label="Navigation Menu"
+          className="fixed inset-0 z-50 flex h-[100dvh] w-screen flex-col justify-between bg-[var(--ink)] px-5 pb-8 text-[var(--bone)] md:hidden overflow-y-auto"
+        >
+          {/* Top Bar with Logo and Close X */}
+          <div className="flex h-16 shrink-0 items-center justify-between border-b border-[color-mix(in_oklab,var(--bone)_12%,transparent)]">
+            <a
+              href="#top"
+              onClick={() => setOpen(false)}
+              className="text-[var(--bone)]"
+              aria-label="AICON'26 home"
             >
-              <a
-                href={link.href}
-                onClick={() => setOpen(false)}
-                className="font-display flex items-center justify-between py-5 text-2xl font-bold tracking-tight active:text-[var(--signal)]"
+              <Wordmark tone="bone" />
+            </a>
+
+            <button
+              type="button"
+              onClick={() => setOpen(false)}
+              aria-label="Close menu"
+              className="focus-visible:ring-ring inline-flex h-11 w-11 items-center justify-center border border-[color-mix(in_oklab,var(--bone)_25%,transparent)] text-[var(--bone)] focus-visible:ring-2 focus-visible:outline-none cursor-pointer"
+            >
+              <X className="h-5 w-5" />
+            </button>
+          </div>
+
+          {/* Nav Links */}
+          <ul className="flex flex-1 flex-col justify-center py-6">
+            {NAV_LINKS.map((link, i) => (
+              <li
+                key={link.href}
+                className="border-b border-[color-mix(in_oklab,var(--bone)_10%,transparent)] first:border-t"
               >
-                {link.label}
-                <span className="label-mono opacity-40">0{i + 1}</span>
-              </a>
-            </li>
-          ))}
-        </ul>
-      </div>
-    </header>
+                <a
+                  href={link.href}
+                  onClick={() => setOpen(false)}
+                  className="font-display flex items-center justify-between py-4 text-2xl font-bold tracking-tight transition-colors active:text-[var(--signal)]"
+                >
+                  <span>{link.label}</span>
+                  <span className="label-mono opacity-40">0{i + 1}</span>
+                </a>
+              </li>
+            ))}
+          </ul>
+
+          {/* Bottom Branding Area */}
+          <div className="shrink-0 border-t border-[color-mix(in_oklab,var(--bone)_12%,transparent)] pt-6">
+            <p className="label-mono text-xs text-[var(--bone)]/50">
+              AICON&rsquo;26 &mdash; AI &middot; Code &middot; Startups &middot; Innovation
+            </p>
+            <p className="label-mono mt-1 text-[10px] text-[var(--bone)]/30">
+              SEECS &middot; NUST &middot; 03 Days &middot; 04 Modules
+            </p>
+          </div>
+        </div>
+      )}
+    </>
   );
 }
