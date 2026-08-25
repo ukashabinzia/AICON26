@@ -7,6 +7,7 @@ export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
 
+  // Scroll detection for navbar background styling
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
     onScroll();
@@ -14,10 +15,35 @@ export function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  // Breakpoint watcher: auto-close menu when viewport expands to desktop (>= 768px)
   useEffect(() => {
-    if (typeof document === "undefined") return;
+    if (typeof window === "undefined") return;
 
-    if (open) {
+    const mql = window.matchMedia("(min-width: 768px)");
+
+    const handleMediaChange = (e: MediaQueryListEvent | MediaQueryList) => {
+      if (e.matches) {
+        setOpen(false);
+      }
+    };
+
+    // If currently on desktop, ensure menu state is closed
+    if (mql.matches && open) {
+      setOpen(false);
+    }
+
+    mql.addEventListener("change", handleMediaChange);
+    return () => mql.removeEventListener("change", handleMediaChange);
+  }, [open]);
+
+  // Robust body scroll-lock management
+  useEffect(() => {
+    if (typeof document === "undefined" || typeof window === "undefined") return;
+
+    const isDesktop = window.matchMedia("(min-width: 768px)").matches;
+    const shouldLock = open && !isDesktop;
+
+    if (shouldLock) {
       document.body.style.overflow = "hidden";
       document.documentElement.style.overflow = "hidden";
       document.body.style.touchAction = "none";
@@ -34,6 +60,7 @@ export function Navbar() {
     };
   }, [open]);
 
+  // Escape key handler to close mobile menu
   useEffect(() => {
     const onKeyDown = (e: KeyboardEvent) => {
       if (e.key === "Escape" && open) {
