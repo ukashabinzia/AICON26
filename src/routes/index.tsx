@@ -1,24 +1,48 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { Navbar } from "@/components/aicon/navbar";
+import { Hero } from "@/components/aicon/hero";
+import { About } from "@/components/aicon/about";
+import { Events } from "@/components/aicon/events";
+import { Personas } from "@/components/aicon/personas";
+import { Schedule } from "@/components/aicon/schedule";
+import { Experience } from "@/components/aicon/experience";
+import { Faq } from "@/components/aicon/faq";
+import { RegisterCta } from "@/components/aicon/register-cta";
+import { Footer } from "@/components/aicon/footer";
 
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
+const TITLE = "AICON'26 — The Signal Is Live";
+const DESCRIPTION =
+  "AICON'26 brings together technology, creativity, innovation and community in one immersive student event. Connect. Create. Converge.";
+
 export const Route = createFileRoute("/")({
+  head: () => ({
+    meta: [
+      { title: TITLE },
+      { name: "description", content: DESCRIPTION },
+      { property: "og:title", content: TITLE },
+      { property: "og:description", content: DESCRIPTION },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+    ],
+  }),
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
 function Index() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
+    <>
+      <Navbar />
+      <main>
+        <Hero />
+        <About />
+        <Events />
+        <Personas />
+        <Schedule />
+        <Experience />
+        <Faq />
+        <RegisterCta />
+      </main>
+      <Footer />
+    </>
   );
 }
