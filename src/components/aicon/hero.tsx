@@ -74,14 +74,14 @@ export function Hero() {
           <div className="flex flex-col gap-3 sm:flex-row lg:flex-col lg:items-end">
             <a
               href="#about"
-              className="group focus-visible:ring-ring inline-flex items-center justify-center gap-3 border border-[color-mix(in_oklab,var(--bone)_35%,transparent)] px-7 py-4 font-display text-sm font-bold tracking-[0.16em] uppercase transition-colors duration-300 hover:border-[var(--signal)] hover:text-[var(--signal)] focus-visible:ring-2 focus-visible:outline-none"
+              className="group focus-visible:ring-ring inline-flex h-[56px] w-full items-center justify-center gap-3 border border-[color-mix(in_oklab,var(--bone)_35%,transparent)] px-7 font-display text-sm font-bold tracking-[0.16em] uppercase transition-colors duration-300 hover:border-[var(--signal)] hover:text-[var(--signal)] focus-visible:ring-2 focus-visible:outline-none sm:w-[220px]"
             >
               Explore AICON
               <ArrowDown className="h-4 w-4 transition-transform duration-300 group-hover:translate-y-1" />
             </a>
             <a
               href="#register"
-              className="group focus-visible:ring-ring inline-flex items-center justify-center gap-3 bg-[var(--signal)] px-7 py-4 font-display text-sm font-bold tracking-[0.16em] text-[var(--ink)] uppercase transition-transform duration-300 hover:-translate-y-1 focus-visible:ring-2 focus-visible:outline-none"
+              className="group focus-visible:ring-ring inline-flex h-[56px] w-full items-center justify-center gap-3 bg-[var(--signal)] px-7 font-display text-sm font-bold tracking-[0.16em] text-[var(--ink)] uppercase transition-transform duration-300 hover:-translate-y-1 focus-visible:ring-2 focus-visible:outline-none sm:w-[220px]"
             >
               Register now
               <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
