@@ -3,8 +3,8 @@ import { useInView } from "./reveal";
 import { SectionLabel } from "./brand";
 
 const STATS = [
-  { value: "03", label: "Days" },
   { value: "04", label: "Modules" },
+  { value: "03", label: "Days" },
   { value: "01", label: "Tech Experience" },
 ];
 

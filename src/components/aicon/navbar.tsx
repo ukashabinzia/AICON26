@@ -174,7 +174,7 @@ export function Navbar() {
               AICON&rsquo;26 &mdash; AI &middot; Code &middot; Startups &middot; Innovation
             </p>
             <p className="label-mono mt-1 text-[10px] text-[var(--bone)]/30">
-              SEECS &middot; NUST &middot; 03 Days &middot; 04 Modules
+              SEECS &middot; NUST &middot; 04 Modules &middot; 03 Days
             </p>
           </div>
         </div>

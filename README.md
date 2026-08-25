@@ -32,7 +32,7 @@ A modern, responsive landing page concept for **AICON'26**, an AI and technology
   2. `02 / Competitive Speed Programming` — Ranked. Timed. Live leaderboard.
   3. `03 / AI RapidSprint` — Build. Demo. Defend.
   4. `04 / Sponsor Innovation Challenge` — Real briefs from industry partners.
-- **Stats & Community Section**: Dynamic animated counter displaying `03 Days`, `04 Modules`, and `01 Tech Experience` alongside confirmed organizing student chapters (NUST ACM, GDGoC NUST, NUST Entrepreneur Club, NUST Hack Club).
+- **Stats & Community Section**: Dynamic animated counter displaying `04 Modules`, `03 Days`, and `01 Tech Experience` alongside confirmed organizing student chapters (NUST ACM, GDGoC NUST, NUST Entrepreneur Club, NUST Hack Club).
 - **Three-Day Experience Flow**: Structured programme preview detailing the 3-day journey (_Day 01 Learn_, _Day 02 Build_, _Day 03 Compete_).
 - **Module-Specific FAQ Accordion**: Keyboard-accessible Radix accordion answering key queries about participation, modules, and registration.
 - **Interactive Registration Demo**: Client-side validated form with field error states, loading spinner, and success confirmation.
