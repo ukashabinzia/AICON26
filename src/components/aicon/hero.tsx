@@ -33,7 +33,7 @@ export function Hero() {
 
           </svg>
         </div>
-        <div className="absolute -right-24 -bottom-32 h-[420px] w-[420px] -skew-x-[28deg] bg-[var(--deep-red)] opacity-40" />
+        <div className="absolute -right-24 -bottom-32 hidden h-[340px] w-[340px] -skew-x-[28deg] bg-[var(--deep-red)] opacity-30 sm:block" />
       </div>
 
       <div className="relative mx-auto w-full max-w-[1400px] px-5 sm:px-8">
