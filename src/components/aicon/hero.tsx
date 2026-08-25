@@ -27,9 +27,10 @@ export function Hero() {
             <path
               d="M-100 810 L1300 200"
               stroke="var(--blue)"
-              strokeWidth="60"
-              opacity="0.55"
+              strokeWidth="34"
+              opacity="0.32"
             />
+
           </svg>
         </div>
         <div className="absolute -right-24 -bottom-32 h-[420px] w-[420px] -skew-x-[28deg] bg-[var(--deep-red)] opacity-40" />
