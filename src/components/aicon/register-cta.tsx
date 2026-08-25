@@ -65,7 +65,7 @@ export function RegisterCta() {
   return (
     <section
       id="register"
-      className="relative overflow-hidden bg-[var(--ink)] py-24 text-[var(--bone)] sm:py-32"
+      className="relative overflow-hidden bg-[var(--ink)] py-20 text-[var(--bone)] sm:py-28"
     >
       {/* Background geometry — subtle */}
       <div aria-hidden className="pointer-events-none absolute inset-0">

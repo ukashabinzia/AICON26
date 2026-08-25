@@ -15,10 +15,33 @@ export function Navbar() {
   }, []);
 
   useEffect(() => {
-    document.body.style.overflow = open ? "hidden" : "";
+    if (typeof document === "undefined") return;
+
+    if (open) {
+      document.body.style.overflow = "hidden";
+      document.documentElement.style.overflow = "hidden";
+      document.body.style.touchAction = "none";
+    } else {
+      document.body.style.overflow = "";
+      document.documentElement.style.overflow = "";
+      document.body.style.touchAction = "";
+    }
+
     return () => {
       document.body.style.overflow = "";
+      document.documentElement.style.overflow = "";
+      document.body.style.touchAction = "";
     };
+  }, [open]);
+
+  useEffect(() => {
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape" && open) {
+        setOpen(false);
+      }
+    };
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
   }, [open]);
 
   return (
@@ -61,7 +84,7 @@ export function Navbar() {
           aria-expanded={open}
           aria-controls="mobile-menu"
           aria-label={open ? "Close menu" : "Open menu"}
-          className="focus-visible:ring-ring inline-flex h-11 w-11 items-center justify-center border border-[color-mix(in_oklab,var(--bone)_25%,transparent)] text-[var(--bone)] focus-visible:ring-2 focus-visible:outline-none md:hidden"
+          className="focus-visible:ring-ring inline-flex h-11 w-11 items-center justify-center border border-[color-mix(in_oklab,var(--bone)_25%,transparent)] text-[var(--bone)] focus-visible:ring-2 focus-visible:outline-none md:hidden cursor-pointer"
         >
           {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
         </button>
@@ -70,7 +93,7 @@ export function Navbar() {
       <div
         id="mobile-menu"
         hidden={!open}
-        className="bg-[var(--ink)] px-5 pb-10 text-[var(--bone)] md:hidden"
+        className="bg-[var(--ink)] px-5 pb-10 text-[var(--bone)] md:hidden border-b border-[color-mix(in_oklab,var(--bone)_15%,transparent)] shadow-2xl"
       >
         <ul className="flex flex-col">
           {NAV_LINKS.map((link, i) => (
@@ -81,7 +104,7 @@ export function Navbar() {
               <a
                 href={link.href}
                 onClick={() => setOpen(false)}
-                className="font-display flex items-center justify-between py-5 text-2xl font-bold tracking-tight"
+                className="font-display flex items-center justify-between py-5 text-2xl font-bold tracking-tight active:text-[var(--signal)]"
               >
                 {link.label}
                 <span className="label-mono opacity-40">0{i + 1}</span>

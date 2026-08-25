@@ -10,7 +10,7 @@ const PILLARS = [
 
 export function About() {
   return (
-    <section id="about" className="bg-[var(--bone)] py-24 sm:py-32">
+    <section id="about" className="bg-[var(--bone)] pt-20 pb-10 sm:pt-28 sm:pb-14">
       <div className="mx-auto max-w-[1400px] px-5 sm:px-8">
         <Reveal>
           <SectionLabel>01 / About</SectionLabel>
@@ -40,7 +40,7 @@ export function About() {
           </Reveal>
         </div>
 
-        <Reveal className="mt-20">
+        <Reveal className="mt-16 sm:mt-20">
           <SignalDivider />
         </Reveal>
 
@@ -49,17 +49,21 @@ export function About() {
             <li key={c.title} className="bg-[var(--bone)]">
               <Reveal
                 delay={i * 90}
-                className="group h-full p-7 transition-colors duration-300 hover:bg-[var(--card)]"
+                className="group h-full p-7 transition-all duration-300 hover:bg-[var(--blue)] hover:-translate-y-1 cursor-default"
               >
-                <span className="label-mono text-[var(--ink)]/40">0{i + 1}</span>
-                <h3 className="mt-6 font-display text-2xl font-bold tracking-tight uppercase">
+                <span className="label-mono text-[var(--ink)]/40 transition-colors duration-300 group-hover:text-[var(--bone)]/60">
+                  0{i + 1}
+                </span>
+                <h3 className="mt-6 font-display text-2xl font-bold tracking-tight uppercase text-[var(--ink)] transition-colors duration-300 group-hover:text-[var(--bone)]">
                   {c.title}
                 </h3>
                 <span
                   aria-hidden
-                  className="mt-4 block h-1 w-10 origin-left -skew-x-[28deg] bg-[var(--signal)] transition-transform duration-500 group-hover:scale-x-[2.6]"
+                  className="mt-4 block h-1 w-10 origin-left -skew-x-[28deg] bg-[var(--signal)] transition-transform duration-300 group-hover:scale-x-[2.2]"
                 />
-                <p className="mt-4 text-sm text-[var(--ink)]/65">{c.copy}</p>
+                <p className="mt-4 text-sm leading-relaxed text-[var(--ink)]/65 transition-colors duration-300 group-hover:text-[var(--bone)]/80">
+                  {c.copy}
+                </p>
               </Reveal>
             </li>
           ))}

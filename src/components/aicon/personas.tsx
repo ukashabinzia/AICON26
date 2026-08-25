@@ -21,7 +21,7 @@ export function StatsAndCommunity() {
   return (
     <>
       {/* ─── Stats band ─── */}
-      <section className="bg-[var(--bone)] py-24 sm:py-32">
+      <section className="bg-[var(--bone)] pt-4 pb-20 sm:pt-6 sm:pb-24">
         <div className="mx-auto max-w-[1400px] px-5 sm:px-8">
           <Reveal>
             <SectionLabel>The Numbers</SectionLabel>
@@ -29,10 +29,10 @@ export function StatsAndCommunity() {
 
           <div
             ref={statsRef}
-            className="mt-14 grid gap-px border border-[color-mix(in_oklab,var(--ink)_14%,transparent)] bg-[color-mix(in_oklab,var(--ink)_14%,transparent)] sm:grid-cols-3"
+            className="mt-10 grid gap-px border border-[color-mix(in_oklab,var(--ink)_14%,transparent)] bg-[color-mix(in_oklab,var(--ink)_14%,transparent)] sm:grid-cols-3"
           >
             {STATS.map((s, i) => (
-              <div key={s.label} className="bg-[var(--bone)] px-8 py-12 sm:py-16 lg:py-20">
+              <div key={s.label} className="bg-[var(--bone)] px-8 py-10 sm:py-14 lg:py-16">
                 <span
                   className="block font-display text-[clamp(4rem,14vw,10rem)] font-bold leading-none tracking-[-0.06em]"
                   style={{
@@ -54,7 +54,7 @@ export function StatsAndCommunity() {
       </section>
 
       {/* ─── Community ─── */}
-      <section className="bg-[var(--blue)] py-24 text-[var(--bone)] sm:py-32">
+      <section className="bg-[var(--blue)] py-20 text-[var(--bone)] sm:py-28">
         <div className="mx-auto max-w-[1400px] px-5 sm:px-8">
           <div className="grid gap-12 lg:grid-cols-12">
             <div className="lg:col-span-7">
@@ -69,7 +69,7 @@ export function StatsAndCommunity() {
               </Reveal>
             </div>
 
-            <div className="lg:col-span-4 lg:col-start-9 lg:pt-8">
+            <div className="lg:col-span-4 lg:col-start-9 lg:pt-6">
               <Reveal delay={100}>
                 <p className="text-base leading-relaxed text-[var(--bone)]/75">
                   AICON isn&rsquo;t run by a single team. It&rsquo;s built by student communities at
@@ -79,7 +79,7 @@ export function StatsAndCommunity() {
 
               <Reveal delay={200}>
                 <ul className="mt-8 flex flex-col gap-4">
-                  {COMMUNITY_ORGS.map((org, i) => (
+                  {COMMUNITY_ORGS.map((org) => (
                     <li
                       key={org}
                       className="flex items-center gap-3 border-b border-[color-mix(in_oklab,var(--bone)_18%,transparent)] pb-4"

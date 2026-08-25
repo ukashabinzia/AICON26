@@ -26,7 +26,7 @@ export function Experience() {
   return (
     <section
       id="experience"
-      className="grain relative overflow-hidden bg-[var(--ink)] py-24 text-[var(--bone)] sm:py-32"
+      className="grain relative overflow-hidden bg-[var(--ink)] py-20 text-[var(--bone)] sm:py-28"
     >
       {/* Subtle diagonal geometry */}
       <div aria-hidden className="pointer-events-none absolute inset-0">

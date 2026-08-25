@@ -1,56 +1,29 @@
 import { Instagram } from "lucide-react";
-import { NAV_LINKS, SignalDivider, Wordmark } from "./brand";
-
-const SOCIALS = [
-  {
-    label: "Instagram",
-    href: "https://www.instagram.com/aicon.26/",
-    Icon: Instagram,
-  },
-];
+import { SignalDivider, Wordmark } from "./brand";
 
 export function Footer() {
   return (
-    <footer className="bg-[var(--ink)] pt-16 pb-10 text-[var(--bone)]">
+    <footer className="bg-[var(--ink)] pt-12 pb-8 text-[var(--bone)] sm:pt-14 sm:pb-10">
       <div className="mx-auto max-w-[1400px] px-5 sm:px-8">
         <SignalDivider tone="bone" />
 
-        <div className="mt-12 flex flex-col gap-10 lg:flex-row lg:items-start lg:justify-between">
+        <div className="mt-10 flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
           <Wordmark tone="bone" />
 
-          <nav aria-label="Footer">
-            <ul className="flex flex-wrap gap-x-8 gap-y-3">
-              {NAV_LINKS.map((link) => (
-                <li key={link.href}>
-                  <a
-                    href={link.href}
-                    className="link-signal label-mono text-[var(--bone)]/70 hover:text-[var(--bone)]"
-                  >
-                    {link.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </nav>
-
-          <ul className="flex gap-3">
-            {SOCIALS.map(({ label, href, Icon }) => (
-              <li key={label}>
-                <a
-                  href={href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={label}
-                  className="focus-visible:ring-ring inline-flex h-11 w-11 items-center justify-center border border-[color-mix(in_oklab,var(--bone)_25%,transparent)] transition-colors duration-300 hover:border-[var(--signal)] hover:text-[var(--signal)] focus-visible:ring-2 focus-visible:outline-none"
-                >
-                  <Icon className="h-4 w-4" />
-                </a>
-              </li>
-            ))}
-          </ul>
+          <div>
+            <a
+              href="https://www.instagram.com/aicon.26/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram"
+              className="focus-visible:ring-ring group inline-flex h-11 w-11 items-center justify-center border border-[color-mix(in_oklab,var(--bone)_25%,transparent)] transition-colors duration-300 hover:border-[var(--signal)] hover:text-[var(--signal)] focus-visible:ring-2 focus-visible:outline-none"
+            >
+              <Instagram className="h-4 w-4 transition-transform duration-300 group-hover:scale-110" />
+            </a>
+          </div>
         </div>
 
-        <div className="mt-14 flex flex-col gap-3 border-t border-[color-mix(in_oklab,var(--bone)_14%,transparent)] pt-6 sm:flex-row sm:items-center sm:justify-between">
+        <div className="mt-10 flex flex-col gap-3 border-t border-[color-mix(in_oklab,var(--bone)_14%,transparent)] pt-6 sm:flex-row sm:items-center sm:justify-between">
           <p className="label-mono text-[var(--bone)]/60">
             AICON&rsquo;26 &mdash; AI &middot; Code &middot; Startups &middot; Innovation
           </p>

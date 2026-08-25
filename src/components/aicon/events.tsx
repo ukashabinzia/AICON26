@@ -39,7 +39,7 @@ export function Modules() {
   const [active, setActive] = useState<string | null>(null);
 
   return (
-    <section id="modules" className="bg-[var(--ink)] py-24 text-[var(--bone)] sm:py-32">
+    <section id="modules" className="bg-[var(--ink)] py-20 text-[var(--bone)] sm:py-28">
       <div className="mx-auto max-w-[1400px] px-5 sm:px-8">
         <Reveal>
           <SectionLabel className="text-[var(--bone)]">02 / Modules</SectionLabel>

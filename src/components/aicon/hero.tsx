@@ -30,11 +30,13 @@ export function Hero() {
       </div>
 
       <div className="relative mx-auto w-full max-w-[1400px] px-5 sm:px-8">
-        {/* Micro labels bar */}
-        <div>
-          <span className="label-mono text-[var(--bone)]/60">
-            AICON // 26 &mdash; SEECS &middot; NUST
-          </span>
+        {/* Micro metadata bar */}
+        <div className="flex items-center gap-2.5">
+          <span className="h-1.5 w-1.5 -skew-x-[28deg] bg-[var(--signal)]" aria-hidden />
+          <p className="font-display text-[0.6875rem] font-medium tracking-[0.2em] text-[var(--bone)]/50 uppercase sm:text-xs">
+            AICON // 26 <span className="mx-2 text-[var(--bone)]/25">&middot;</span> SEECS &middot;
+            NUST
+          </p>
         </div>
 
         {/* Logo + identity cluster */}

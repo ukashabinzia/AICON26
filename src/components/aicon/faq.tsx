@@ -44,7 +44,7 @@ const FAQS = [
 
 export function Faq() {
   return (
-    <section id="faq" className="bg-[var(--bone)] py-24 sm:py-32">
+    <section id="faq" className="bg-[var(--bone)] py-20 sm:py-28">
       <div className="mx-auto grid max-w-[1400px] gap-12 px-5 sm:px-8 lg:grid-cols-12">
         <div className="lg:col-span-4">
           <Reveal>
