@@ -74,7 +74,10 @@ export function Navbar() {
       >
         <ul className="flex flex-col">
           {NAV_LINKS.map((link, i) => (
-            <li key={link.href} className="border-t border-[color-mix(in_oklab,var(--bone)_12%,transparent)]">
+            <li
+              key={link.href}
+              className="border-t border-[color-mix(in_oklab,var(--bone)_12%,transparent)]"
+            >
               <a
                 href={link.href}
                 onClick={() => setOpen(false)}

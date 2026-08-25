@@ -77,11 +77,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "AICON'26 — The Signal Is Live" },
+      { title: "AICON'26 — Build What's Next" },
       {
         name: "description",
         content:
-          "AICON'26 — technology, creativity, innovation and community in one immersive student event.",
+          "AICON'26 — a three-day AI and technology experience at SEECS, NUST. Coding, AI, startups, innovation.",
       },
       { name: "author", content: "AICON'26" },
       { property: "og:type", content: "website" },
@@ -107,11 +107,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 
 function RootShell({ children }: { children: ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <head>
         <HeadContent />
       </head>
-      <body>
+      <body suppressHydrationWarning>
         {children}
         <Scripts />
       </body>

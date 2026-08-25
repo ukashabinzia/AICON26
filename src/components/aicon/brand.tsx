@@ -1,10 +1,10 @@
-import logo from "@/assets/aicon-logo.png.asset.json";
+import logo from "@/assets/aicon-logo.png";
 import { cn } from "@/lib/utils";
 
 export const NAV_LINKS = [
   { label: "About", href: "#about" },
-  { label: "Events", href: "#events" },
-  { label: "Schedule", href: "#schedule" },
+  { label: "Modules", href: "#modules" },
+  { label: "Experience", href: "#experience" },
   { label: "FAQ", href: "#faq" },
   { label: "Register", href: "#register" },
 ] as const;
@@ -12,7 +12,7 @@ export const NAV_LINKS = [
 export function LogoMark({ className }: { className?: string }) {
   return (
     <img
-      src={logo.url}
+      src={logo}
       alt="AICON'26 logo"
       width={96}
       height={96}
@@ -82,7 +82,7 @@ export function SignalDivider({
   );
 }
 
-export function StatusDot({ label = "SIGNAL ACTIVE" }: { label?: string }) {
+export function StatusDot({ label = "SYSTEM: ONLINE" }: { label?: string }) {
   return (
     <span className="label-mono inline-flex items-center gap-2">
       <span className="animate-signal-pulse inline-block h-2 w-2 rounded-full bg-[var(--signal)]" />

@@ -2,17 +2,16 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Navbar } from "@/components/aicon/navbar";
 import { Hero } from "@/components/aicon/hero";
 import { About } from "@/components/aicon/about";
-import { Events } from "@/components/aicon/events";
-import { Personas } from "@/components/aicon/personas";
-import { Schedule } from "@/components/aicon/schedule";
+import { Modules } from "@/components/aicon/events";
+import { StatsAndCommunity } from "@/components/aicon/personas";
 import { Experience } from "@/components/aicon/experience";
 import { Faq } from "@/components/aicon/faq";
 import { RegisterCta } from "@/components/aicon/register-cta";
 import { Footer } from "@/components/aicon/footer";
 
-const TITLE = "AICON'26 — The Signal Is Live";
+const TITLE = "AICON'26 — Build What's Next";
 const DESCRIPTION =
-  "AICON'26 brings together technology, creativity, innovation and community in one immersive student event. Connect. Create. Converge.";
+  "AICON'26 is a three-day AI and technology experience at SEECS, NUST. Coding, AI, startups, innovation — four modules, one community.";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -35,9 +34,8 @@ function Index() {
       <main>
         <Hero />
         <About />
-        <Events />
-        <Personas />
-        <Schedule />
+        <StatsAndCommunity />
+        <Modules />
         <Experience />
         <Faq />
         <RegisterCta />

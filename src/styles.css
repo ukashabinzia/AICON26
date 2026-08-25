@@ -5,7 +5,7 @@
 @custom-variant dark (&:is(.dark *));
 
 /*
- * AICON'26 — "THE SIGNAL IS LIVE."
+ * AICON'26 — BUILD WHAT'S NEXT.
  * Brand: Blue #1532B1, Signal Yellow #FCDC58, Deep Red #7D0202,
  * Bone #FDF8E9, Ink #14161A. All tokens in oklch.
  */
@@ -181,8 +181,16 @@
 
 @utility signal-grid {
   background-image:
-    linear-gradient(to right, color-mix(in oklab, currentColor 8%, transparent) 1px, transparent 1px),
-    linear-gradient(to bottom, color-mix(in oklab, currentColor 8%, transparent) 1px, transparent 1px);
+    linear-gradient(
+      to right,
+      color-mix(in oklab, currentColor 8%, transparent) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      to bottom,
+      color-mix(in oklab, currentColor 8%, transparent) 1px,
+      transparent 1px
+    );
   background-size: 72px 72px;
 }
 
@@ -251,6 +259,17 @@
   transform: none;
 }
 
+/* ---------- Module interaction ---------- */
+
+@utility module-expand {
+  transition:
+    background-color 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+    color 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+    padding 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* ---------- Keyframes ---------- */
+
 @keyframes signal-draw {
   0% {
     stroke-dashoffset: 1200;
@@ -290,6 +309,28 @@
   }
 }
 
+@keyframes count-up {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 @utility animate-signal-draw {
   stroke-dasharray: 1200;
   animation: signal-draw 2.4s cubic-bezier(0.22, 1, 0.36, 1) forwards;
@@ -305,6 +346,14 @@
 
 @utility animate-marquee {
   animation: marquee-x 32s linear infinite;
+}
+
+@utility animate-count-up {
+  animation: count-up 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@utility animate-fade-in-up {
+  animation: fade-in-up 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
 @media (prefers-reduced-motion: reduce) {
