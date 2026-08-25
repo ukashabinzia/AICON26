@@ -66,7 +66,7 @@ export function Hero() {
               creators and innovators together at SEECS, NUST.
             </p>
             <p className="label-mono mt-5 text-[var(--bone)]/50">
-              03 Days &middot; 04 Modules &middot; One Tech Experience
+              04 Modules &middot; 03 Days &middot; 01 Tech Experience
             </p>
           </div>
 

@@ -8,7 +8,7 @@ A modern, responsive landing page concept for **AICON'26**, an AI and technology
 
 > **AICON'26 — BUILD WHAT'S NEXT.**  
 > _AI · Code · Startups · Innovation_  
-> _03 Days · 04 Modules · One Tech Experience_
+> _04 Modules · 03 Days · 01 Tech Experience_
 
 ---
 
